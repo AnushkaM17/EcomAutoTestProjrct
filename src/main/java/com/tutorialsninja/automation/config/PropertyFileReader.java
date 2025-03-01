@@ -17,7 +17,7 @@ public class PropertyFileReader implements ConfigurationReader{
 		try {
 			properties.load(PathHelper.getInputStreamResourcePath("/src/main/resources/ConfigurationFile/config.properties"));
 		} catch (IOException e) {
-			e.printStackTrace();
+			e.printStackTrace();  /// purpose of all above 3 lines is to initialize config property file
 		}
 	}
 

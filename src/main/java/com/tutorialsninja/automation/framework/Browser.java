@@ -5,6 +5,20 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.opera.OperaDriver;
+
+import com.tutorialsninja.automation.base.Base;
+
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -39,6 +53,14 @@ public class Browser {
 			Base.driver = new OperaDriver();
 			log.info("Opera Browser is Started" + Base.driver.hashCode());
 			return Base.driver;
+			
+		case "edge":
+			WebDriverManager.edgedriver().version("99.0.1150.39").setup(); // replace with the latest stable version
+            Base.driver = new EdgeDriver();
+
+            log.info("Edge Browser is Started " + Base.driver.hashCode());
+            return Base.driver;
+            
 
 		case "htmlunit":
 			Base.driver = new HtmlUnitDriver();
